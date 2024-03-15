@@ -7,31 +7,16 @@
 
   - O que não pode esquecer:
     - [ ] Instalar o Vite
-  <a href="https://vitejs.dev/guide/" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Vite-lib?style=flat&color=blue">
-  </a>
-    - [ ] Apos criar o vite, dar ```npm i```
+    - [ ] Apos criar o vite, dar 
     - [ ] Instalar o tailwindcss
-   <a href="https://tailwindcss.com/docs/installation/using-postcss" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/TailwindCss-lib?style=flat&color=blue">
-  </a>
     - [ ] Configurar o tailwindcss
     - [ ] Configurar o arquivo main.css
     - [ ] Instalar o postcss
     - [ ] Instalar o autoprefixer
     - [ ] Configurar o postcss passando o tailwindcss e o autoprefixer
     - [ ] Baixar a extensão do tailwindcss intelliSense no vscode
-  <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Extension-lib?style=flat&color=blue">
-  </a>
     - [ ] Baixar a extensão do Eslint no vscode
-   <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Extension-lib?style=flat&color=blue">
-  </a>
     - [ ] Para essa config não baixe a extensão do Prettier no vscode, pois ja vamos instalar o prettier como dependência do eslint, se baixar a extensão vai ter conflito. Se não quiser desinstalar, so desabilitar a extensão.
-  <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Extension-lib?style=flat&color=blue">
-  </a>
     - [ ] Instalar o eslint e seus plugins
     - [ ] Configurar o eslint e dentro dele o prettier
     - [ ] A pasta .vscode vai ter umas settings que forçam nesse projeto utilizar configurações importantes para o eslint funcionar, caso queira deixar isso global para sua conta do git basta dar um CTRL + SHIFT + P> digitar settings e clicar em Preferences: Open Settings (UI) e colar o conteúdo do arquivo settings.json que está na pasta .vscode ou ir no canto superior esquerdo arquivo/code>preferences>settings e colar o conteúdo do arquivo settings.json que está na pasta .vscode. Caso tenha duvida deixei uns prints na pasta de assets 
@@ -65,25 +50,21 @@
       }
       ```
     - [ ] Instalar prettier e o plugin do prettier para o tailwindcss, para organizar minhas classes do tailwindcss. Obs: no pacote deles não possui o plugin: prettier-plugin-tailwindcss, então é necessário instalar manualmente, porque a pacote foi feito somente para instalar o eslint, o tailwindcss instala quem quiser. Config para padronizar o código com o TailwindCSS. Obs: O prettier do codigo ao todo fica integrado no eslint
-  <a href="https://tailwindcss.com/blog/automatic-class-sorting-with-prettier" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Prettier + Prettier plugin tailwindcss-lib?style=flat&color=blue">
-  </a>
       ```
       npm i -D prettier-plugin-tailwindcss
       ```
     - [ ] Configurar o arquivo prettier.config.json
-    ```
-    {
-      "plugins": ["prettier-plugin-tailwindcss"]
-    }
-    ```
-    Ou .js, somente com o resolve funcionou
-    ```
-    module.exports = {
-      plugins: [require.resolve('prettier-plugin-tailwindcss')],
-    }
-
-    ```
+      ```
+      {
+        "plugins": ["prettier-plugin-tailwindcss"]
+      }
+      ```
+      Ou .js, somente com o resolve funcionou
+      ```
+      module.exports = {
+        plugins: [require.resolve('prettier-plugin-tailwindcss')],
+      }
+      ```
     - [ ] No video ele instala o package deles e usa direto no Eslint, mas nesse projeto meu aqui eu instalo lib por lib, e insiro os plugin por plugin baixado dentro do *.eslintrc.cjs*. Caso crie um pacote como ele, pode fazer o mesmo.(Até o momento não criei um pacote, mas se criar vou seguir o mesmo padrão dele)
   Instalando as dependências do pacotes deles, para um projeto React + Vite, se  tiver usando o next basta substituir o react por next.
       ``` 
@@ -170,14 +151,43 @@
       ```
     - [ ] Toda vez que mudar algo no projeto e não sentir uma reação do eslint, basta dar um CTRL + SHIFT + P> digitar reload window e clicar em Developer: Reload Window
     - [ ] Caso o lint não esteja apontando erros rode o comando: para ver se tem algum erro no código
-    ```
-    npm run lint
-    ```
+      ```
+      npm run lint
+      ```
     - [ ] No package.json tire o *"type"="module"*, ele acaba esculhambando com tudo, descobri isso usando o 
-    ```
-    npm run lint
-    ```
+      ```
+      npm run lint
+      ```
     - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
+
+
+   ## Links
+   
+  <p>
+  <a href="https://vitejs.dev/guide/" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Vite-lib?style=flat&color=blue">
+  </a>
+    
+  <a href="https://tailwindcss.com/docs/installation/using-postcss" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/TailwindCss-lib?style=flat&color=blue">
+  </a>
+ 
+  <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/extensão do tailwindcss intelliSense no vscode-extension?style=flat&color=blue">
+  </a>
+ 
+  <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/extensão do Eslint no vscode-extension?style=flat&color=blue">
+  </a>
+    
+  <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/extensão do Prettier-Extension?style=flat&color=blue">
+  </a>
+    
+  <a href="https://tailwindcss.com/blog/automatic-class-sorting-with-prettier" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Prettier + Prettier plugin tailwindcss-lib?style=flat&color=blue">
+  </a>
+  </p>
 
 
 
