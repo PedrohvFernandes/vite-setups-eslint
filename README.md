@@ -44,6 +44,7 @@
   <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E">
   <img src="https://img.shields.io/badge/Vite-tec?style=for-the-badge&logo=vite&labelColor=yellow&color=%23646CFF">
 </p>
+
 #### More and Links
 <a href="https://youtu.be/BP2HGTwMZuo?si=9C3_ekQHuWOKk9bM" target="_blank">
   <img height="25" src="https://img.shields.io/badge/Link do video-video?style=flat&color=blue">
