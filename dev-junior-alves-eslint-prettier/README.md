@@ -27,7 +27,7 @@
     ```
     O hooks porque vamos trabalhar com hooks no react. Um exemplo o useEffect quando usamos alguma propriedade/estado do react dentro dele, ele pede para colocar no array de dependências, e o eslint vai apontar isso. Entre outras regras do hooks do react.
 
-  - [ ] Configurar o arquivo *.eslintrc.cjs* para o projeto. Configuração inicial default do eslint:
+  - [ ] Configurar o arquivo *.eslintrc.json* para o projeto. Configuração inicial default do eslint:
     ```
         {
         "env": {
@@ -97,7 +97,7 @@
   - [ ] Lembrando que pra aplicar as configs do prettier basta dar um ``` CTRL + S ```
   - [ ] Configurando o plugin ``` eslint-plugin-import-helpers ``` no arquivo *eslintrc.json*
   - [ ] De um reload a toda config que você fizer no vscode, para isso de um ``` CTRL + SHIFT + P ``` e digite ``` reload window ``` e clique em ``` Developer: Reload Window ``` 
-  - [ ] Depois no tsconfig.json, adicione a seguinte configuração: Para resolver a questão de imports ex: ``` import Button from '../../components/Button' ``` para ``` import Button from 'components/Button' ```
+  - [ ] Depois no *tsconfig.json*, adicione a seguinte configuração: Para resolver a questão de imports ex: ``` import Button from '../../components/Button' ``` para ``` import Button from 'components/Button' ```
     ```
     "baseUrl": "src"
     "paths": {
@@ -171,11 +171,11 @@
     ```
   - [ ] Toda vez que mudar algo no projeto e não sentir uma reação do eslint, basta dar um CTRL + SHIFT + P> digitar reload window e clicar em Developer: Reload Window
   - [ ] Caso o Eslint ou Prettier não esteja apontando erros rode o comando: para ver se tem algum erro no código:
-    Vite:
+    *Vite*:
     ```
     npm run lint
     ```
-    Next:
+    *Next*:
     ```
     npm run eslint
     ```
