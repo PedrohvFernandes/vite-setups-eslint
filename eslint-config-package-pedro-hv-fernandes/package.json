@@ -15,8 +15,10 @@
     "pedrohvfernandes"
   ],
   "repository": {
-    "url": "pedrohvfernandes/eslint-config-package-pedro-hv-fernandes"
+    "type": "git",
+    "url": "https://github.com/PedrohvFernandes/vite-setups/tree/main"
   },
+  "homepage": "https://github.com/PedrohvFernandes/vite-setups/tree/main/eslint-config-package-pedro-hv-fernandes#readme",
   "peerDependencies": {
     "eslint": "^8.0.0",
     "typescript": ">=5"
