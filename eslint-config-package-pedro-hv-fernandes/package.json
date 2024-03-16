@@ -5,6 +5,9 @@
   "description": "ESLint configuration used by pedrohvfernandes.",
   "main": "index.js",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords":[
     "eslint",
     "eslint-config",
