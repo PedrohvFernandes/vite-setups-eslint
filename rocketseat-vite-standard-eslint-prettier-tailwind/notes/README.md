@@ -65,7 +65,7 @@
       plugins: [require.resolve('prettier-plugin-tailwindcss')],
     }
     ```
-  - [ ] No video ele instala o package deles e usa direto no Eslint, mas nesse projeto meu aqui eu instalo lib por lib, e insiro os plugin por plugin baixado dentro do *.eslintrc.cjs*. Caso crie um pacote como ele, pode fazer o mesmo.(Até o momento não criei um pacote, mas se criar vou seguir o mesmo padrão dele)
+  - [ ] No video ele instala o package deles e usa direto no Eslint, mas nesse projeto meu aqui eu instalo lib por lib, e insiro os plugin por plugin baixado dentro do *.eslintrc.cjs*. Caso crie um pacote como ele, pode fazer o mesmo.([O meu pacote](https://www.npmjs.com/package/@pedrohvfernandes/eslint-config))
 Instalando as dependências do pacotes deles, para um projeto React + Vite, se  tiver usando o next basta substituir o react por next.
     ``` 
       npm i -D eslint @rocketseat/eslint-config prettier-plugin-tailwindcss
