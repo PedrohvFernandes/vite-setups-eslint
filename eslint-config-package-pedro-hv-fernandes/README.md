@@ -10,6 +10,22 @@
 
 ## Setup
 
+### React (with Next.js)
+
+Install dependencies:
+```
+npm i -D eslint @pedrohvfernandes/eslint-config
+```
+Inside `.eslintrc.json`
+```
+{
+  "extends": [
+    "@pedrohvfernandes/eslint-config/next", 
+    "next/core-web-vitals"
+  ]
+}
+```
+
 ### React (Vite or CRA)
 
 Install dependencies:

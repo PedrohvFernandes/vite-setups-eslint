@@ -1,0 +1,61 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    // Informando a versão do React
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "react-hooks",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        // Desabilitando a regra que obriga a importação do React em arquivos J(T)SX
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        // Ele ordena nossos imports
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                // Tudo que vem do react tem que vim primeiro, se tiver next, vem depois /^next/, "/@next/". Aqui basicamente definimos a ordem dos imports
+                "groups": [
+                    ["/^react/"],
+                    "/components/",
+                    "/module/",
+                    "/^@shared/", 
+                    "/absolute/",
+                    ["parent","sibling", "index"],
+                    "/routes/",
+                    "/styles/"
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ]
+    }
+}

@@ -23,9 +23,16 @@
 
 ## 2 - Dev Junior Alves: - Ele usou o next.js.
 
-- Technologies
+#### Technologies
+<p>
+  <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white">
+  <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E">
+</p>
 
-- [Link do video](https://www.youtube.com/watch?v=xbrM3aKotao)
+#### More and Links
+  <a href="https://www.youtube.com/watch?v=xbrM3aKotao" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Link do video-video?style=flat&color=blue">
+  </a>
 
 ## 3 - Vite Setup: - Ele usou o vite.
 

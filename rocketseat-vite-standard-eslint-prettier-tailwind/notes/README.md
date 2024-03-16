@@ -5,9 +5,9 @@
     <img height="25" src="https://img.shields.io/badge/Documentation installation postcss + tailwindcss-lib?style=flat&color=blue">
   </a>
 
- ## Itens necessarios
+ ## Itens necessários
   - [ ] Instalar o Vite
-  - [ ] Apos criar o vite, dar 
+  - [ ] Apos criar o vite, dar ```npm install``` para instalar as dependências
   - [ ] Instalar o tailwindcss
   - [ ] Configurar o tailwindcss
   - [ ] Configurar o arquivo main.css
@@ -51,9 +51,9 @@
     ```
   - [ ] Instalar prettier e o plugin do prettier para o tailwindcss, para organizar minhas classes do tailwindcss. Obs: no pacote deles não possui o plugin: prettier-plugin-tailwindcss, então é necessário instalar manualmente, porque a pacote foi feito somente para instalar o eslint, o tailwindcss instala quem quiser. Config para padronizar o código com o TailwindCSS. Obs: O prettier do codigo ao todo fica integrado no eslint
     ```
-    npm i -D prettier-plugin-tailwindcss
+    npm i -D prettier prettier-plugin-tailwindcss
     ```
-  - [ ] Configurar o arquivo prettier.config.json
+  - [ ] Criar e Configurar o arquivo prettier.config.json
     ```
     {
       "plugins": ["prettier-plugin-tailwindcss"]
@@ -170,6 +170,17 @@ Instalando as dependências do pacotes deles, para um projeto React + Vite, se  
     
   <a href="https://tailwindcss.com/docs/installation/using-postcss" target="_blank">
     <img height="25" src="https://img.shields.io/badge/TailwindCss-lib?style=flat&color=blue">
+  </a>
+  <a href="https://nextjs.org/docs/getting-started/installation" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Next-lib?style=flat&color=blue">
+  </a>
+
+  <a href="https://prettier.io/docs/en/install" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Prettier-lib?style=flat&color=blue">
+  </a>
+
+  <a href="https://eslint.org" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Eslint-lib?style=flat&color=blue">
   </a>
  
   <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank">
