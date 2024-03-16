@@ -1,10 +1,16 @@
 {
   "name": "@pedrohvfernandes/eslint-config",
-  "version": "2.2.2",
+  "version": "1.0.0",
   "private": false,
   "description": "ESLint configuration used by pedrohvfernandes.",
   "main": "index.js",
   "license": "MIT",
+  "keywords":[
+    "eslint",
+    "eslint-config",
+    "eslint-config-pedrohvfernandes",
+    "pedrohvfernandes"
+  ],
   "repository": {
     "url": "pedrohvfernandes/eslint-config-package-pedro-hv-fernandes"
   },
