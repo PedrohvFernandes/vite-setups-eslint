@@ -6,7 +6,7 @@
   - [ ] Baixar a extensão do Eslint no vscode
   - [ ] Para essa config não baixe a extensão do Prettier no vscode, pois ja vamos instalar o prettier como dependência do eslint, se baixar a extensão vai ter conflito. Se não quiser desinstalar, so desabilitar a extensão.
   - [ ] Instalar o eslint(No vite e next o eslint ja vem) e seus plugins
-  - [ ] Mas queira reinstalar ou colocar o arquivo do eslint no default, de ```npx eslint --init``` e escolher as opções que deseja, para esse projeto eu escolhi as seguintes opções:
+  - [ ] Mas caso queira reinstalar ou colocar o arquivo do eslint no default, de ```npx eslint --init``` e escolher as opções que deseja, para esse projeto eu escolhi as seguintes opções:
     ``` 
     ? How would you like to use ESLint? To check syntax, find problems
     ? What type of modules does your project use? JavaScript modules (import/export)
