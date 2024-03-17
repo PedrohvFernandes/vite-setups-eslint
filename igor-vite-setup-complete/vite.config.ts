@@ -25,7 +25,9 @@ export default defineConfig({
       hooks: `${__dirname}/src/hooks`
     }
   },
-
+  optimizeDeps: {
+    disabled: false
+  },
   define: {
     // Leitura de variáveis de ambiente, a leitura do vite é --> import.meta.env.VITE_***, com isso mudamos so para process.env
     'process.env': process.env,

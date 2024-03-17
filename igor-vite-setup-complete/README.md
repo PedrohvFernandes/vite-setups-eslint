@@ -383,6 +383,67 @@
     ```
   - [ ] Para testar foi criado um stories dentro do counter
   - [ ] Depois basta rodar o storybook: ```npm run storybook```
+  - [ ] De um ```npm i @storybook/addon-actions @storybook/testing-library -D```
+  ### 4 Parte: Configurando o Styled-components e o Preview do Storybook
+  - [ ] Vamos instalar o styled-components
+    ```
+    npm i styled-components
+    ```
+    ```
+    npm i @types/styled-components -D
+    ```
+  - [ ] Agora iremos criar pasta *types* e *styles*. Os types basicamente a onde eu chamar meu theme, o TS vai saber o que eu defini no meu theme, e o styles é onde eu vou colocar meus estilos globais e reset
+  - [ ] Uma demonstração na pasta componentes/content
+  - [ ] Agora vamos configurar o styled-components no storybook. Default do Preview.ts:
+    ```
+    import type { Preview } from '@storybook/react'
+
+    const preview: Preview = {
+      parameters: {
+        controls: {
+          matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/i
+          }
+        }
+      }
+    }
+
+    export default preview
+    ```
+    Passamos ele para *.jsx*:
+    ```
+    import { ThemeProvider } from 'styled-components'
+
+
+      import RestStyles from 'styles/resets'
+      import theme from 'styles/theme'
+
+      export const parameters = {
+        actions: { argTypesRegex: '^on[A-Z].*' }
+      }
+
+      export const decorators = [
+        (Story) => (
+          <ThemeProvider theme={theme}>
+            <RestStyles />
+            <Story />
+          </ThemeProvider>
+        )
+      ]
+    ```
+    Se for passar para *.tsx*:
+    ```
+    import RestStyles from '../src/styles/resets'
+    import theme from '../src/styles/theme'
+    ```
+  - [ ] Por ultimo para acelerar as dependências no vite, vamos para o *vite.config.ts* e coloque
+    ```
+      optimizeDeps: {
+      disabled: false
+    },
+    ```
+    Dessa forma, quando iniciamos o storybook o vite não precisa ficar verificando as dependências, ele já vai saber quais são as dependências que ele precisa carregar, e isso vai acelerar o carregamento do storybook
   - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
 
 

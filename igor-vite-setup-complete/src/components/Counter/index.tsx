@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import * as S from './styles'
+
 export const Counter = () => {
   const [count, setCount] = useState(0)
 
@@ -8,7 +10,7 @@ export const Counter = () => {
       <h1>
         Count: <span>{count}</span>
       </h1>
-       <button onClick={() => setCount(count + 1)}>Increment</button>
+      <S.Button onClick={() => setCount(count + 1)}>Increment</S.Button>
     </div>
   )
 }
