@@ -27,6 +27,8 @@
     ```
     O hooks porque vamos trabalhar com hooks no react. Um exemplo o useEffect quando usamos alguma propriedade/estado do react dentro dele, ele pede para colocar no array de dependências, e o eslint vai apontar isso. Entre outras regras do hooks do react.
 
+    Por fim de um ```npm uninstall eslint-plugin-react-refresh```
+
   - [ ] Configurar o arquivo *.eslintrc.json* para o projeto. Configuração inicial default do eslint:
     ```
         {

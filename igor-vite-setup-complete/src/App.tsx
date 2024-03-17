@@ -1,6 +1,5 @@
-import { Counter } from "components/Counter";
+import { Counter } from 'components/Counter'
 
 export function App() {
-
-  return <Counter/>
+  return <Counter />
 }

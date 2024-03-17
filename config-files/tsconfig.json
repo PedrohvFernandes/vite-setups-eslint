@@ -25,6 +25,18 @@
     "paths": {
       "@/*": ["./src/*"]
     }
+    
+    // Pode usar assim também:
+    // // Url
+    // "baseUrl": ".",
+    // "paths": {
+    //   // Vai ficar assim: 'components/button'
+    //   "*": [
+    //     "./src/*"
+    //   ]
+    //   // Vai ficar assim: '@components/button'
+    //   // "@/*": ["src/*"]
+    // }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

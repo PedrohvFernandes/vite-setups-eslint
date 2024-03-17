@@ -29,13 +29,14 @@
       </React.StrictMode>,
     )
     ```
+    e por fim de um ```npm uninstall eslint-plugin-react-refresh``` para desinstalar o eslint-plugin-react-refresh
   - [ ] Vamos instalar o ```npm i @types/node -D```, para utilizar alguns types do node dentro do *vite.config.ts*
   - [ ] Depois configuramos o vite.config.ts
   - [ ] Como configuramos no vite as urls dos arquivos, o TS precisa entender também, basta passar a *baseUrl* e *paths*
 
   ### 2 Parte: Configurando o Eslint e Prettier
   - [ ] Baixar a extensão do Eslint no vscode
-  - [ ] Para essa config não baixe a extensão do Prettier no vscode, pois ja vamos instalar o prettier como dependência do eslint, se baixar a extensão vai ter conflito. Se não quiser desinstalar, so desabilitar a extensão.
+  - [ ] No video ele pede para instalar, mas você pode integrar o prettier dentro do eslint para não baixar a extensão do Prettier no vscode, pois ja vamos ter no eslint o prettier.
   - [ ] Instalar o eslint(No vite eslint ja vem) e seus plugins
   - [ ] Mas caso queira reinstalar ou colocar o arquivo do eslint no default, de ```npx eslint --init``` e escolher as opções que deseja, para esse projeto eu escolhi as seguintes opções:
     ``` 
@@ -50,14 +51,12 @@
     ```
   - [ ] Instalar os demais plugins do eslint, para o projeto:
     ``` 
-    npm i eslint-plugin-react-hooks eslint-plugin-import-helpers -D
+    npm i eslint-plugin-react-hooks eslint-plugin-import-helpers eslint-plugin-no-only-tests eslint-plugin-storybook -D
     ```
     No vite ja vem os seguintes plugins, então não precisa instalar:
     ```
     1. eslint-plugin-react-hooks
     ```
-    O hooks porque vamos trabalhar com hooks no react. Um exemplo o useEffect quando usamos alguma propriedade/estado do react dentro dele, ele pede para colocar no array de dependências, e o eslint vai apontar isso. Entre outras regras do hooks do react.
-
   - [ ] Configurar o arquivo *.eslintrc.json* para o projeto. Configuração inicial default do eslint:
     ```
         {
@@ -84,30 +83,118 @@
     }
 
     ```
-  - [ ] Se dermos no next um ``` npm run eslint src ``` ou no vite ```npm run lint src``` ele vai apontar esse erro:
+  - [ ]  Configuração final  do *.eslintrc.json*:
     ```
-    Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
+        {
+      "env": {
+        "browser": true,
+        "es2020": true,
+        "jest": true,
+        "node": true
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "plugin:storybook/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+      },
+      "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "no-only-tests"
+      ],
+      "rules": {
+        "import-helpers/order-imports": [
+          "warn",
+          {
+            "newlinesBetween": "always", // new line between groups
+            "groups": [
+              "module",
+              [
+                "/^components/",
+                "/^types/"
+                // tu pode colocar todos os seus folders aqui
+              ],
+              "/styles.*/",
+              ["parent", "sibling", "index"],
+              "/\\.\\/styles/"
+            ],
+            "alphabetize": {
+              "order": "asc",
+              "ignoreCase": true
+            }
+          }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-console": "warn",
+        "no-only-tests/no-only-tests": ["error"]
+      },
+      "overrides": [
+        {
+          "files": ["src/graphql/generated/*.ts"],
+          "rules": {
+            "@typescript-eslint/no-explicit-any": "off"
+          }
+        }
+      ]
+    }
+
     ```
-    Esse erro é devido porque temos que especificar a versão do react no eslint, para ele saber qual versão do react estamos usando. Para isso vamos adicionar a seguinte configuração no arquivo *.eslintrc.json*
-
-
+  - [ ] De um reload a toda config que você fizer no vscode, para isso de um ``` CTRL + SHIFT + P ``` e digite ``` reload window ``` e clique em ``` Developer: Reload Window ```
+  - [ ] Crie o .eslintignore para ignorar alguns arquivos
+  - [ ] Depois vamos forçar umas configurações do vscode. Pasta .vscode/settings.json
+    ```
+    {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        // "source.fixAll": true,
+        // "source.fixAll.eslint": true,
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit",
+      },
+      "eslint.format.enable": true
+    }
+    ```
   - [ ] Instalar prettier 
     ```
     npm i -D prettier
     ```
-  - [ ] Criar e Configurar o arquivo .prettierrc. Nesse projeto as configurações do prettier ficaram nesse arquivo, enquanto o da rocket diretamente no eslint:
+  - [ ] Criar e Configurar o arquivo .prettierrc.json. Nesse projeto as configurações do prettier ficaram nesse arquivo, enquanto o da rocket diretamente no eslint:
     ```
     {
       "trailingComma": "none",
-      "semi": true,
+      "semi": false,
       "singleQuote": true
     }
     ```
-
     Explicando cada item:
     ```
     1. trailingComma: "none" --> Não coloca virgula no final do objeto
-    2. semi: true --> Coloca ponto e virgula no final de cada linha
+    2. semi: false --> Não coloca ponto e virgula no final da linha
     3. singleQuote: true --> Coloca aspas simples
     ```
   - [ ] Agora a integração do prettier com o eslint, para isso vamos instalar o plugin do prettier no eslint
@@ -115,91 +202,8 @@
     npm i -D eslint-config-prettier eslint-plugin-prettier
     ```
   - [ ] Coloque o prettier no eslint
-  - [ ] Depois vamos forçar umas configurações do vscode. Pasta .vscode/settings.json
-    ```
-    {
-      "editor.formatOnSave": false,
-      "editor.codeActionsOnSave": {
-        // "source.fixAll.eslint": true
-        "source.fixAll.eslint": "explicit"
-      }
-    }
-    ```
+  - [ ] Crie o arquivo .prettierignore para ignorar alguns arquivos
   - [ ] Lembrando que pra aplicar as configs do prettier basta dar um ``` CTRL + S ```
-  - [ ] Configurando o plugin ``` eslint-plugin-import-helpers ``` no arquivo *eslintrc.json*
-  - [ ] De um reload a toda config que você fizer no vscode, para isso de um ``` CTRL + SHIFT + P ``` e digite ``` reload window ``` e clique em ``` Developer: Reload Window ``` 
-  - [ ] Depois no *tsconfig.json*, adicione a seguinte configuração: Para resolver a questão de imports ex: ``` import Button from '../../components/Button' ``` para ``` import Button from 'components/Button' ```
-    ```
-    "baseUrl": "src"
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-    ```
-  - [ ]  Configuração final  do *.eslintrc.json*:
-    ```
-    {
-        "env": {
-            "browser": true,
-            "es2021": true
-        },
-        // Informando a versão do React
-        "settings": {
-            "react": {
-                "version": "detect"
-            }
-        },
-        "extends": [
-            "eslint:recommended",
-            "plugin:@typescript-eslint/recommended",
-            "plugin:react/recommended",
-            "plugin:prettier/recommended",
-            "prettier"
-        ],
-        "parser": "@typescript-eslint/parser",
-        "parserOptions": {
-            "ecmaVersion": "latest",
-            "sourceType": "module"
-        },
-        "plugins": [
-            "@typescript-eslint",
-            "react",
-            "react-hooks",
-            "eslint-plugin-import-helpers"
-        ],
-        "rules": {
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
-            // Desabilitando a regra que obriga a importação do React em arquivos J(T)SX
-            "react/react-in-jsx-scope": "off",
-            "prettier/prettier": [
-                "error",
-                {
-                    "endOfLine": "auto"
-                }
-            ],
-            // Ele ordena nossos imports
-            "import-helpers/order-imports": [
-                "warn",
-                {
-                    "newlinesBetween": "always",
-                    // Tudo que vem do react tem que vim primeiro, se tiver next, vem depois /^next/, "/@next/". Aqui basicamente definimos a ordem dos imports
-                    "groups": [
-                        ["/^react/"],
-                        "/components/",
-                        "/module/",
-                        "/^@shared/", 
-                        "/absolute/",
-                        ["parent","sibling", "index"],
-                        "/routes/",
-                        "/styles/"
-                    ],
-                    "alphabetize": { "order": "asc", "ignoreCase": true }
-                }
-            ]
-        }
-    }
-
-    ```
   - [ ] Toda vez que mudar algo no projeto e não sentir uma reação do eslint, basta dar um CTRL + SHIFT + P> digitar reload window e clicar em Developer: Reload Window
   - [ ] Caso o Eslint ou Prettier não esteja apontando erros rode o comando: para ver se tem algum erro no código:
     *Vite*:
@@ -210,6 +214,60 @@
     ```
     npm run eslint
     ```
+  - [ ] Aparentemente estava dando algum problema, no meu eslint: Por ele ser um json, é importante que não tenha virgulas no final de cada linha, então remova as virgulas no final de cada linha do arquivo *.eslintrc.json*, e o prettier estava com algum problema de versão, com isso dei um ```npm i eslint-plugin-prettier@latest --save-exact```
+  -[ ] Erro das virgulas:
+    ```
+      npm run lint  
+
+      > igor-vite-setup-complete@0.0.0 lint
+      > eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0
+
+
+      Oops! Something went wrong! :(
+
+      ESLint: 8.57.0
+
+      Failed to read JSON file at C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\.eslintrc.json:
+
+      Cannot read config file: C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\.eslintrc.json
+      Error: Expected double-quoted property name in JSON at position 1781
+    ```
+    Erro da versão:
+    ```
+     npm run lint
+
+    > igor-vite-setup-complete@0.0.0 lint
+    > eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0
+
+
+    Oops! Something went wrong! :(
+
+    ESLint: 8.57.0
+
+    TypeError: prettier.resolveConfig.sync is not a function
+    Occurred while linting C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\src\App.tsx:1
+    Rule: "prettier/prettier"
+        at Program (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint-plugin-prettier\eslint-plugin-prettier.js:138:40)
+        at ruleErrorHandler (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\linter.js:1076:28)
+        at C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\safe-emitter.js:45:58
+        at Array.forEach (<anonymous>)
+        at Object.emit (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\safe-emitter.js:45:38)
+        at NodeEventGenerator.applySelector (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\node-event-generator.js:297:26)
+        at NodeEventGenerator.applySelectors (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\node-event-generator.js:326:22)
+        at NodeEventGenerator.enterNode (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-    at NodeEventGenerator.enterNode (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\node-event-generator.js:340:14)
+        at CodePathAnalyzer.enterNode (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\code-path-analysis\code-path-analyzer.js:803:23)      
+        at C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\linter.js:1111:32
+    ```
+    Links que me ajudaram: [typeerror-prettier-resolveconfig-sync-is-not-a-function](https://stackoverflow.com/questions/76624993/prettier-3-0-0-typeerror-prettier-resolveconfig-sync-is-not-a-function) ```npm i eslint-plugin-prettier@latest --save-exact``` e [JS Error when unticking "Show arrow" in views: Expected double-quoted property name in JSON expected-double-quoted-property-name-in-json-at-position-1781](https://www.drupal.org/project/gliderjs/issues/3378680)
+    - [ ] Build --> vamos tirar o tsc, o tsc nada mais é que um typecheck, e para evitar que o build quebre com arquivos que não fazem parte src, que são arquivos de config, vamos separar o build do typecheck, para isso vamos para o *package.json* e vamos criar um script chamado *typecheck*
+    - [ ] Lint --> Vamos criar um script chamado *lint* para rodar o eslint. O proprio vite ja cria: ```npm run eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0```, mas vamos criar o nosso ```eslint src --max-warnings=0``` ele vai verificar os erros da minha aplicação, e agora o lint fix --> ```eslint src --fix``` --> Ele resolve problemas encontrados. *.* --> Raiz do projeto, *src* --> Pasta src, *--ext ts,tsx* --> Extensão dos arquivos que ele vai verificar, *--report-unused-disable-directives* --> Reportar diretivas de desabilitação não utilizadas, *--max-warnings 0* --> Não permitir warnings
+    ```
+    "lint:vite": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:my": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "lint:mysrc": "eslint ./src --max-warnings 0",
+    ```
+
   - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
 
 
@@ -218,10 +276,6 @@
   <p>
   <a href="https://vitejs.dev/guide/" target="_blank">
     <img height="25" src="https://img.shields.io/badge/Vite-lib?style=flat&color=blue">
-  </a>
-
-  <a href="https://nextjs.org/docs/getting-started/installation" target="_blank">
-    <img height="25" src="https://img.shields.io/badge/Next-lib?style=flat&color=blue">
   </a>
 
   <a href="https://prettier.io/docs/en/install" target="_blank">
