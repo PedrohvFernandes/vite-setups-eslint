@@ -267,7 +267,122 @@
     "lint:fix": "eslint . --fix",
     "lint:mysrc": "eslint ./src --max-warnings 0",
     ```
+  ### 3 Parte: Configurando o Storybook
+  - [ ] Inicialmente vamos instalar o storybook: ```npx sb init``` ou ```npx storybook init```
+  - [ ] So ir dando enter
+  - [ ] Depois vamos alterar a configuração do storybook
+  - [ ] Config padrão inicial:
+    ```
+    import type { StorybookConfig } from '@storybook/react-vite'
 
+    const config: StorybookConfig = {
+      stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+      addons: [
+        '@storybook/addon-onboarding',
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@chromatic-com/storybook',
+        '@storybook/addon-interactions'
+      ],
+      framework: {
+        name: '@storybook/react-vite',
+        options: {}
+      },
+      docs: {
+        autodocs: 'tag'
+      }
+    }
+    export default config
+
+    ```
+  - [ ] Configuração final do storybook: Para *main.ts*:
+    ```
+    import { mergeConfig } from 'vite'
+    import type { StorybookConfig } from '@storybook/react-vite'
+
+    const config: StorybookConfig = {
+      stories: ['../src/**/stories.@(ts|tsx)'],
+      addons: [
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/addon-interactions'
+      ],
+      framework: {
+        name: '@storybook/react-vite',
+        options: {}
+      },
+      core: {
+        builder: '@storybook/builder-vite'
+      },
+      // features: {
+      //   storyStoreV7: true
+      // },
+      features: {
+        // https://storybook.js.org/docs/api/main-config-features
+        argTypeTargetsV7: true
+      },
+      docs: {
+        autodocs: 'tag'
+      },
+
+      async viteFinal(config) {
+        return mergeConfig(config, {
+          resolve: {
+            alias: {
+              components: `/src/components/`,
+              styles: `/src/styles/`,
+              types: `/src/types/`,
+              utils: `/src/utils/`
+            }
+          }
+        })
+      }
+    }
+    export default config
+
+    module.exports = {
+
+
+      framework: '@storybook/react',
+
+
+
+    }
+    ```
+  - [ ] Configuração do storybook do igor: Para *main.cjs*
+    ```
+    const { mergeConfig } = require('vite')
+
+      module.exports = {
+        stories: ['../src/**/stories.@(ts|tsx)'],
+        addons: [
+          '@storybook/addon-links',
+          '@storybook/addon-essentials',
+          '@storybook/addon-interactions'
+        ],
+        framework: '@storybook/react',
+        core: {
+          builder: '@storybook/builder-vite'
+        },
+        features: {
+          storyStoreV7: true
+        },
+        async viteFinal(config) {
+          return mergeConfig(config, {
+            resolve: {
+              alias: {
+                components: `/src/components/`,
+                styles: `/src/styles/`,
+                types: `/src/types/`,
+                utils: `/src/utils/`
+              }
+            }
+          })
+        }
+      }
+    ```
+  - [ ] Para testar foi criado um stories dentro do counter
+  - [ ] Depois basta rodar o storybook: ```npm run storybook```
   - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
 
 
@@ -276,6 +391,10 @@
   <p>
   <a href="https://vitejs.dev/guide/" target="_blank">
     <img height="25" src="https://img.shields.io/badge/Vite-lib?style=flat&color=blue">
+  </a>
+
+  <a href="https://storybook.js.org" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Storybook-lib?style=flat&color=blue">
   </a>
 
   <a href="https://prettier.io/docs/en/install" target="_blank">
