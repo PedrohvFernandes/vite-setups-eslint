@@ -64,7 +64,7 @@
     ```
     npm i -D prettier
     ```
-  - [ ] Criar e Configurar o arquivo .prettierrc
+  - [ ] Criar e Configurar o arquivo .prettierrc. Nesse projeto as configurações do prettier ficaram nesse arquivo, enquanto o da rocket diretamente no eslint:
     ```
     {
       "trailingComma": "none",

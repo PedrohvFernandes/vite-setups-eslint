@@ -7,6 +7,8 @@
 - React Hooks plugin;
 - JSX a11y plugin;
 - Prettier;
+-  *In this case, it is not necessary to create the .prettier file in the project root, as the eslintrc configured in this package already contains the exact settings for prettier.*
+-  *Note: Remove the prettier extension and install the eslint extension*
 
 ## Setup
 
@@ -28,7 +30,7 @@ Inside `.eslintrc.json`
 
 ### React (Vite or CRA)
 
-Install dependencies:
+Install dependencies: 
 ```
 npm i -D eslint @pedrohvfernandes/eslint-config
 ```
@@ -49,5 +51,17 @@ Inside `.eslintrc.json`
 ```
 {
   "extends": "@pedrohvfernandes/eslint-config/node"
+}
+```
+### Dev Junior + Rocketseat + Igor React (Vite or CRA)
+
+Install dependencies:
+```
+npm i -D eslint @pedrohvfernandes/eslint-config
+```
+Inside `.eslintrc.json`
+```
+{
+  "extends": "@pedrohvfernandes/eslint-config/myconfigreact"
 }
 ```
