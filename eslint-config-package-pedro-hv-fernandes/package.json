@@ -1,6 +1,6 @@
 {
   "name": "@pedrohvfernandes/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "ESLint configuration used by pedrohvfernandes.",
   "main": "index.js",
@@ -16,9 +16,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PedrohvFernandes/vite-setups/tree/main"
+    "url": "https://github.com/PedrohvFernandes/vite-setups-eslint/tree/main"
   },
-  "homepage": "https://github.com/PedrohvFernandes/vite-setups/tree/main/eslint-config-package-pedro-hv-fernandes#readme",
+  "homepage": "https://github.com/PedrohvFernandes/vite-setups-eslint/tree/main/eslint-config-package-pedro-hv-fernandes#readme",
   "peerDependencies": {
     "eslint": "^8.0.0",
     "typescript": ">=5"
