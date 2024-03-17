@@ -1,6 +1,6 @@
-# Repositório com algumas configurações de eslint, prettier, tailwind... Padronização de código.
+# Repository with some eslint, prettier, tailwind configurations... Code standardization.
 
-## 1 - Rocketseat: - Eles usaram o Next.js, mas pode usar o vite.
+## 1 - Rocketseat: - They used Next.js, but you can use Vite.
 
 #### Technologies
 
@@ -22,7 +22,7 @@
     <img height="25" src="https://img.shields.io/badge/Meu pacote de Eslint-package?style=flat&color=blue">
   </a>
 
-## 2 - Dev Junior Alves: - Ele usou o next.js.
+## 2 - Dev Junior Alves: - He used next.js
 
 #### Technologies
 <p>
@@ -36,7 +36,7 @@
     <img height="25" src="https://img.shields.io/badge/Link do video-video?style=flat&color=blue">
   </a>
 
-## 3 - Vite Setup: - Ele usou o vite.
+## 3 - Vite Setup: - He used vite.
 
 #### Technologies
 <p>
