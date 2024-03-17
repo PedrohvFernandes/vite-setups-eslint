@@ -44,6 +44,7 @@
   <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E">
   <img src="https://img.shields.io/badge/Vite-tec?style=for-the-badge&logo=vite&labelColor=yellow&color=%23646CFF">
   <img src="https://img.shields.io/badge/Storybook-lib?style=for-the-badge&logo=storybook&labelColor=black&color=%23FF4785">
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> 
 </p>
 
 #### More and Links

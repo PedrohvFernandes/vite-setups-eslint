@@ -215,7 +215,7 @@
     npm run eslint
     ```
   - [ ] Aparentemente estava dando algum problema, no meu eslint: Por ele ser um json, é importante que não tenha virgulas no final de cada linha, então remova as virgulas no final de cada linha do arquivo *.eslintrc.json*, e o prettier estava com algum problema de versão, com isso dei um ```npm i eslint-plugin-prettier@latest --save-exact```
-  -[ ] Erro das virgulas:
+  - [ ] Erro das virgulas:
     ```
       npm run lint  
 
@@ -258,9 +258,9 @@
         at CodePathAnalyzer.enterNode (C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\code-path-analysis\code-path-analyzer.js:803:23)      
         at C:\Users\Pedro\OneDrive\Documentos\GitHub\vite-setups-eslint\igor-vite-setup-complete\node_modules\eslint\lib\linter\linter.js:1111:32
     ```
-    Links que me ajudaram: [typeerror-prettier-resolveconfig-sync-is-not-a-function](https://stackoverflow.com/questions/76624993/prettier-3-0-0-typeerror-prettier-resolveconfig-sync-is-not-a-function) ```npm i eslint-plugin-prettier@latest --save-exact``` e [JS Error when unticking "Show arrow" in views: Expected double-quoted property name in JSON expected-double-quoted-property-name-in-json-at-position-1781](https://www.drupal.org/project/gliderjs/issues/3378680)
-    - [ ] Build --> vamos tirar o tsc, o tsc nada mais é que um typecheck, e para evitar que o build quebre com arquivos que não fazem parte src, que são arquivos de config, vamos separar o build do typecheck, para isso vamos para o *package.json* e vamos criar um script chamado *typecheck*
-    - [ ] Lint --> Vamos criar um script chamado *lint* para rodar o eslint. O proprio vite ja cria: ```npm run eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0```, mas vamos criar o nosso ```eslint src --max-warnings=0``` ele vai verificar os erros da minha aplicação, e agora o lint fix --> ```eslint src --fix``` --> Ele resolve problemas encontrados. *.* --> Raiz do projeto, *src* --> Pasta src, *--ext ts,tsx* --> Extensão dos arquivos que ele vai verificar, *--report-unused-disable-directives* --> Reportar diretivas de desabilitação não utilizadas, *--max-warnings 0* --> Não permitir warnings
+      Links que me ajudaram: [typeerror-prettier-resolveconfig-sync-is-not-a-function](https://stackoverflow.com/questions/76624993/prettier-3-0-0-typeerror-prettier-resolveconfig-sync-is-not-a-function) ```npm i eslint-plugin-prettier@latest --save-exact``` e [JS Error when unticking "Show arrow" in views: Expected double-quoted property name in JSON expected-double-quoted-property-name-in-json-at-position-1781](https://www.drupal.org/project/gliderjs/issues/3378680)
+  - [ ] Build --> vamos tirar o tsc, o tsc nada mais é que um typecheck, e para evitar que o build quebre com arquivos que não fazem parte src, que são arquivos de config, vamos separar o build do typecheck, para isso vamos para o *package.json* e vamos criar um script chamado *typecheck*
+  - [ ] Lint --> Vamos criar um script chamado *lint* para rodar o eslint. O proprio vite ja cria: ```npm run eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0```, mas vamos criar o nosso ```eslint src --max-warnings=0``` ele vai verificar os erros da minha aplicação, e agora o lint fix --> ```eslint src --fix``` --> Ele resolve problemas encontrados. *.* --> Raiz do projeto, *src* --> Pasta src, *--ext ts,tsx* --> Extensão dos arquivos que ele vai verificar, *--report-unused-disable-directives* --> Reportar diretivas de desabilitação não utilizadas, *--max-warnings 0* --> Não permitir warnings
     ```
     "lint:vite": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:my": "eslint . --max-warnings 0",
@@ -269,9 +269,9 @@
     ```
   ### 3 Parte: Configurando o Storybook
   - [ ] Inicialmente vamos instalar o storybook: ```npx sb init``` ou ```npx storybook init```
-  - [ ] So ir dando enter
-  - [ ] Depois vamos alterar a configuração do storybook
-  - [ ] Config padrão inicial:
+    - [ ] So ir dando enter
+    - [ ] Depois vamos alterar a configuração do storybook
+    - [ ] Config padrão inicial:
     ```
     import type { StorybookConfig } from '@storybook/react-vite'
 
@@ -439,11 +439,32 @@
     ```
   - [ ] Por ultimo para acelerar as dependências no vite, vamos para o *vite.config.ts* e coloque
     ```
-      optimizeDeps: {
+    optimizeDeps: {
       disabled: false
     },
     ```
     Dessa forma, quando iniciamos o storybook o vite não precisa ficar verificando as dependências, ele já vai saber quais são as dependências que ele precisa carregar, e isso vai acelerar o carregamento do storybook
+  ### 5 Parte: Configurando testes unitários com Jest
+
+
+
+  ### Build setup
+
+    > Eslint (+Prettier), Storybook, Styled-components, Jest e Playwright
+
+    ```bash
+    # install dependencies
+    npm install or yarn
+
+    # run the tests
+    npm test or yarn test
+
+    # run the e2e tests
+    npm run test:playwright or yarn test:playwright
+
+    # storybook
+    npm run storybook or yarn storybook
+    ```
   - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
 
 
