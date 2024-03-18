@@ -340,14 +340,6 @@
     }
     export default config
 
-    module.exports = {
-
-
-      framework: '@storybook/react',
-
-
-
-    }
     ```
   - [ ] Configuração do storybook do igor: Para *main.cjs*
     ```
@@ -383,7 +375,8 @@
     ```
   - [ ] Para testar foi criado um stories dentro do counter
   - [ ] Depois basta rodar o storybook: ```npm run storybook```
-  - [ ] De um ```npm i @storybook/addon-actions @storybook/testing-library -D```
+  - [ ] De um ```npm i @storybook/addon-actions @storybook/addon-essentials @storybook/addon-interactions @storybook/addon-links @storybook/builder-vite @storybook/react @storybook/testing-library @storybook/react-vite -D```
+  - [ ] De um ```npm uninstall @chromatic-com/storybook @storybook/addon-onboarding @storybook/blocks --force```
   ### 4 Parte: Configurando o Styled-components e o Preview do Storybook
   - [ ] Vamos instalar o styled-components
     ```
@@ -444,10 +437,41 @@
     },
     ```
     Dessa forma, quando iniciamos o storybook o vite não precisa ficar verificando as dependências, ele já vai saber quais são as dependências que ele precisa carregar, e isso vai acelerar o carregamento do storybook
-  ### 5 Parte: Configurando testes unitários com Jest
+  ### 5 e 6 Parte: Configurando testes unitários com Jest e Playwright
 
+  - [ ] Vamos começar pelo *tsconfig.json* colocando os includes
+    - [ ] Depois criar o arquivo *jest.config.js*
+    - [ ] Depois o arquivo de setup *.jest>setup.ts*
+    - [ ] De um: 
+    ```
+    npm i -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-plugin-styled-components @playwright/test @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event @types/jest jest jest-unit jest-environment-jsdom jest-styled-components babel-loader babel-jest
 
+    ```
+      Aparentemente o react-hooks e outras libs  esta dando conflito com react, então vamos instalar o react-hooks separado: [link que me ajudou](https://github.com/npm/cli/issues/2120)
+      ```bash
+      npm i --save-dev @testing-library/react-hooks babel-plugin-styled-components babel-loader babel-jest --force
 
+      ou
+
+      npm i --save-dev @testing-library/react-hooks babel-plugin-styled-components babel-loader babel-jest --legacy-peer-deps
+      ```
+      - [ ] Depois vamos criar o script/comando de test no *package.json*
+        ```
+        "test": "jest --maxWorkers=50% --coverage=false",
+        "test:coverage": "jest --maxWorkers=50% --coverage",
+        ```
+        Um é com coverage, que basicamente é a cobertura de testes, e o outro é sem coverage. Tipo um teste rápido e um teste completo
+      - [ ] Depois o babel: *.babelrc*
+      - [ ] Criamos agora uma pasta utils e dentro dele um arquivo *test-utils.tsx*, é ele quem vai lidar com a parte de englobar os testes com o provider do styled-components e ter as outras partes do test-library
+      - [ ] Dentro do counter, no Span colocamos um *data-testid="counter-view"* para podermos testar
+      - [ ] Depois escrevemos um test
+    - [ ] Caso de esse erro em algum *test.tsx*: ```bash 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>', faça isso em *tsconfig.json*:```
+      ```
+      "types": ["@testing-library/jest-dom"]
+      ```
+      Para que o ts entenda que estamos pegando um metodo do jest-dom ['toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'](https://github.com/testing-library/jest-dom/issues/546) porque em *.jest>setup* estamos passando essa lib para que nos testes não precise ficar importando a mesma lib. Basicamente o ts so vai dizer que o expect possui metodos dessa lib.
+
+      > Obs: mesmo que o ts não encontrava a função no expect, o teste rodava numa boa dando `npm run test`, o problema era só na tipação que o TS estava tendo dificuldade para encontrar.
   ### Build setup
 
     > Eslint (+Prettier), Storybook, Styled-components, Jest e Playwright
@@ -477,6 +501,10 @@
 
   <a href="https://storybook.js.org" target="_blank">
     <img height="25" src="https://img.shields.io/badge/Storybook-lib?style=flat&color=blue">
+  </a>
+
+  <a href="https://playwright.dev" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Playwright-lib?style=flat&color=blue">
   </a>
 
   <a href="https://prettier.io/docs/en/install" target="_blank">

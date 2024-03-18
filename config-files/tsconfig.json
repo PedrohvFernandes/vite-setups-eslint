@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -13,31 +16,41 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
     // Urls
     "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
-    }
-    
+      "@/*": [
+        "./src/*"
+      ]
+    },
     // Pode usar assim também:
-    // // Url
-    // "baseUrl": ".",
-    // "paths": {
-    //   // Vai ficar assim: 'components/button'
-    //   "*": [
-    //     "./src/*"
-    //   ]
-    //   // Vai ficar assim: '@components/button'
-    //   // "@/*": ["src/*"]
-    // }
+    /*
+    // Url
+    "baseUrl": ".",
+    "paths": {
+      // Vai ficar assim: 'components/button'
+      "*": [
+        "./src/*"
+      ]
+      // Vai ficar assim: '@components/button'
+      // "@/*": ["src/*"]
+    }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
+  */
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "./.eslintrc.*",
+      "./vite.config.ts"
+    ],
+    "references": [
+      {
+        "path": "./tsconfig.node.json"
+      }
+    ]
+  }

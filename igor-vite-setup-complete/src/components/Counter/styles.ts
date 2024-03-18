@@ -12,3 +12,6 @@ export const Button = styled.button`
     font-size: 1.5rem;
   `}
 `
+export const Counter = styled.div`
+  font-size: 2rem;
+`

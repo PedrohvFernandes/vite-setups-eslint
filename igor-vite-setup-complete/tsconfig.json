@@ -9,6 +9,8 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
+    // Esse types vai servir porque dentro .jest>setup ja estamos importando para todos os test jest, dessa forma não precisamos importar em cada arquivo de teste, e com o types ele vai entender que no exact possui por exemplo expect().toHaveTextContent() dentro dos testes sem dar erro. Sem o type o jest ja conseguiria rodar normalmente, mas para no documente não fique apontando erro
+    "types": ["@testing-library/jest-dom"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -33,7 +35,10 @@
     }
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "./.eslintrc.*",
+    "./vite.config.ts"
   ],
   "references": [
     {
