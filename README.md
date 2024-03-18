@@ -47,6 +47,7 @@
   <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> 
   <img src="https://img.shields.io/badge/playwright-lib?style=for-the-badge&logo=playwright&labelColor=black&color=orange"> 
   <img src="https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white"> 
+  <img src="https://img.shields.io/badge/Yarn-lib?style=for-the-badge&logo=yarn&logoColor=white&color=%232C8EBB"> 
 </p>
 
 #### More and Links

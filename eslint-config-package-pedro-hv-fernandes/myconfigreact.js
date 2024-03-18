@@ -4,11 +4,6 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  settings: {
-    react: {
-      version: "detect"
-    }
-  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -32,6 +27,7 @@ module.exports = {
     'react-hooks',
     'eslint-plugin-import-helpers',
     'jsx-a11y',
+    "no-only-tests"
   ],
   rules: {
     'react/self-closing-comp': 'error',
@@ -44,10 +40,10 @@ module.exports = {
       'singleQuote': true,
       'trailingComma': 'all',
       'arrowParens': 'always',
-      // 'semi': false,
+      'semi': false,
       'endOfLine': 'auto',
       'trailingComma': 'none',
-      'semi': true,
+      // 'semi': true,
     }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
@@ -67,21 +63,24 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-          'newlinesBetween': 'always',
-          // Tudo que vem do react tem que vim primeiro, se tiver next, vem depois /^next/, '/@next/'. Aqui basicamente definimos a ordem dos imports
-          'groups': [
-              ['/^react/'],
-              '/components/',
-              '/module/',
-              '/^@shared/', 
-              '/absolute/',
-              ['parent','sibling', 'index'],
-              '/routes/',
-              '/styles/'
-          ],
-          'alphabetize': { 'order': 'asc', 'ignoreCase': true }
+        'newlinesBetween': 'always',
+        // Tudo que vem do react tem que vim primeiro, se tiver next, vem depois /^next/, '/@next/'. Aqui basicamente definimos a ordem dos imports
+        'groups': [
+          ['/^react/'],
+          '/components/',
+          '/module/',
+          '/^@shared/',
+          '/absolute/',
+          ['parent', 'sibling', 'index'],
+          '/routes/',
+          '/styles/'
+        ],
+        'alphabetize': { 'order': 'asc', 'ignoreCase': true }
       }
-  ]
+    ],
+    "no-only-tests/no-only-tests": [
+      "error"
+    ]
   },
   settings: {
     react: {

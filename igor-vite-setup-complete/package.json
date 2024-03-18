@@ -12,12 +12,13 @@
     "lint:mysrc": "eslint ./src --max-warnings 0",
     "test": "jest --maxWorkers=50% --coverage=false",
     "test:coverage": "jest --maxWorkers=50% --coverage",
+    "test:playwright": "playwright test --headed --config=playwright.config.ts --project=chromium",
+    "test:playwright:helper": "npx playwright codegen http://localhost:3000",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@types/node": "^20.11.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
@@ -31,6 +32,7 @@
     "@storybook/addon-actions": "^8.0.0",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/builder-vite": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
     "@storybook/react": "^8.0.0",
     "@storybook/react-vite": "^8.0.0",
@@ -41,6 +43,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.28",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@types/styled-components": "^5.1.34",

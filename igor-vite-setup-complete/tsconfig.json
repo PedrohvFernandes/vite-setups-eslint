@@ -38,7 +38,8 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "./.eslintrc.*",
-    "./vite.config.ts"
+    "./vite.config.ts",
+    "playwright.config.ts",
   ],
   "references": [
     {

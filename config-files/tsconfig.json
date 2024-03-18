@@ -21,6 +21,22 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "types": [
+      "@testing-library/jest-dom"
+    ],
+    // Aqui você vai incluir tudo o que você quer que o TypeScript compile. Por exemplo se você precisa usar o process.env você precisa incluir ele aqui, como o vite e o playwright
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "./.eslintrc.*",
+      "./vite.config.ts",
+      "playwright.config.ts",
+    ],
+    "references": [
+      {
+        "path": "./tsconfig.node.json"
+      }
+    ]
     // Urls
     "baseUrl": "src",
     "paths": {
@@ -42,15 +58,4 @@
     }
   },
   */
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx",
-      "./.eslintrc.*",
-      "./vite.config.ts"
-    ],
-    "references": [
-      {
-        "path": "./tsconfig.node.json"
-      }
-    ]
   }
