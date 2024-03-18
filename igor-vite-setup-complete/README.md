@@ -508,37 +508,35 @@
     ```
   - [ ] Pode exclui a pasta *test-examples*
   - [ ] Agora damos um ```yarn dev``` e depois um ```yarn test:playwright``` para rodar os testes, um teste de exemplo, basta criar um teste na raiz do *e2e* e rodar o comando de testes:
-  ```bash
-  # example.spec.ts 
-  import { test, expect } from '@playwright/test'
-
-  test('get started link', async ({ page }) => {
-    // Ele abre a pagina
-    await page.goto('http://localhost:3000')
-
-    // Ele olha o counter-view
-    await expect(page.getByTestId('counter-view')).toBeVisible()
-    // Inicialmente 0
-    await expect(page.getByTestId('counter-view')).toHaveText('0')
-
-    // Click
-    await page.getByRole('button', { name: /Click me!/i }).click()
-
-    // Agora o counter-view deve ser 1
-    await expect(page.getByTestId('counter-view')).toHaveText('1')
-
-    await page.pause()
-  })
-
-  ```
+    ```bash
+    # example.spec.ts 
+    import { test, expect } from '@playwright/test'
+  
+    test('get started link', async ({ page }) => {
+      // Ele abre a pagina
+      await page.goto('http://localhost:3000')
+  
+      // Ele olha o counter-view
+      await expect(page.getByTestId('counter-view')).toBeVisible()
+      // Inicialmente 0
+      await expect(page.getByTestId('counter-view')).toHaveText('0')
+  
+      // Click
+      await page.getByRole('button', { name: /Click me!/i }).click()
+  
+      // Agora o counter-view deve ser 1
+      await expect(page.getByTestId('counter-view')).toHaveText('1')
+  
+      await page.pause()
+    })
+  
+    ``` 
   - [ ] Agora vamos deixar algo com mais manutenibilidade(de manter o código mais tempo e de organização), em *e2e*, criamos o *components* e *tests*, e na raiz da *e2* criamos dois arquivos de config um do *vite* e outro do *tsconfig*, fazendo assim uma ramificação dos testes, separando do ambiente principal
   - [ ] Apos isso criamos o *counter* dentro de components, dessa forma padronizamos o test do counter, criando uma class, recebe a page, e dentro dele criamos os métodos, que serão os testes referente aquele componente, e no arquivo de teste em *tests* chamamos a class e passamos a page, e chamamos os métodos, dessa forma padronizamos os testes, com isso, os arquivos de testes ficam so responsáveis por chamar os métodos ex: *counter.spec.ts*, e os métodos ficam responsáveis por fazer os testes referente aquele componente, ex: *counter.ts*. Ta mas cade o componente nesses arquivos? basicamente ele não esta ai diretamente, o testamos de acordo com a rota, como não temos pagina algum então passamos a home ```./``` e nela procuramos o getByTestId --> *counter-view* e fazemos os testes referente a ele, que é o counter, dentro ```./``` possui um button, clicamos nele através do getByRole, e depois verificamos se o counter-view esta com o texto 1, e por fim damos um pause para ver o que aconteceu. Com isso, os spec fica menor, fica mais simples de entender cada passo, ele fica somente responsável para chamar os métodos para testar o componente, e o componente fica responsável de fazer os métodos dos testes. Ex: o método happyPath() testado nos spec é responsável por fazer o teste principal, mas é um teste vindo do component.
 
-  ### Build setup
+   ### Build setup Eslint (+Prettier), Storybook, Styled-components, Jest e Playwright 
 
-    > Eslint (+Prettier), Storybook, Styled-components, Jest e Playwright
-
-    ```bash
+   ```bash
     # install dependencies
     npm install or yarn
 
@@ -550,8 +548,8 @@
 
     # storybook
     npm run storybook or yarn storybook
-    ```
-  - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
+   ```
+ - [ ] Para mais duvidas so seguir o video que está no inicio do repositório
 
 
    ## Links
