@@ -36,7 +36,7 @@
     <img height="25" src="https://img.shields.io/badge/Link do video-video?style=flat&color=blue">
   </a>
 
-## 3 - Vite Setup: - He used vite.
+## 3 - Igor - Vite Setup: - He used vite.
 
 #### Technologies
 <p>
@@ -51,7 +51,7 @@
 </p>
 
 #### More and Links
-<a href="https://youtu.be/BP2HGTwMZuo?si=9C3_ekQHuWOKk9bM" target="_blank">
+<a href="https://www.youtube.com/watch?v=BP2HGTwMZuo&list=PLt1jJ0_RPJxKwwQdQoAFkurhFU6M1zf41" target="_blank">
   <img height="25" src="https://img.shields.io/badge/Link do video-video?style=flat&color=blue">
 </a>
 <a href="https://github.com/igorvieira/vite-setup/blob/master/.eslintrc.json" target="_blank">
