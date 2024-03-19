@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
+    jest: true
   },
   extends: [
     'eslint:recommended',
@@ -11,7 +11,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
     'plugin:react-hooks/recommended',
-    'standard',
+    'standard'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -27,7 +27,7 @@ module.exports = {
     'react-hooks',
     'eslint-plugin-import-helpers',
     'jsx-a11y',
-    "no-only-tests"
+    'no-only-tests'
   ],
   rules: {
     'react/self-closing-comp': 'error',
@@ -41,9 +41,9 @@ module.exports = {
       'trailingComma': 'all',
       'arrowParens': 'always',
       'semi': false,
-      'endOfLine': 'auto',
-      'trailingComma': 'none',
       // 'semi': true,
+      'endOfLine': 'auto',
+      'trailingComma': 'none'
     }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
@@ -51,8 +51,8 @@ module.exports = {
       'warn',
       {
         elements: ['img'],
-        img: ['Image'],
-      },
+        img: ['Image']
+      }
     ],
     'jsx-a11y/aria-props': 'warn',
     'jsx-a11y/aria-proptypes': 'warn',
@@ -64,7 +64,6 @@ module.exports = {
       'warn',
       {
         'newlinesBetween': 'always',
-        // Tudo que vem do react tem que vim primeiro, se tiver next, vem depois /^next/, '/@next/'. Aqui basicamente definimos a ordem dos imports
         'groups': [
           ['/^react/'],
           '/components/',
@@ -78,8 +77,8 @@ module.exports = {
         'alphabetize': { 'order': 'asc', 'ignoreCase': true }
       }
     ],
-    "no-only-tests/no-only-tests": [
-      "error"
+    'no-only-tests/no-only-tests': [
+      'error'
     ]
   },
   settings: {
@@ -87,8 +86,8 @@ module.exports = {
       version: 'detect',
     },
     'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
-    },
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts']
+    }
   },
   ignorePatterns: [
     'node_modules'

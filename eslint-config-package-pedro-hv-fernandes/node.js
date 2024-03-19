@@ -1,13 +1,13 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true,
+    node: true
   },
   extends: ['standard', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['@typescript-eslint'],
   rules: {
@@ -19,13 +19,13 @@ module.exports = {
         singleQuote: true,
         trailingComma: 'all',
         arrowParens: 'always',
-        semi: false,
-      },
-    ],
+        semi: false
+      }
+    ]
   },
   settings: {
     'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
-    },
-  },
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts']
+    }
+  }
 }
