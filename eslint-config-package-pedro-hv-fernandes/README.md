@@ -56,7 +56,7 @@ Inside `.eslintrc.json`
   "extends": "@pedrohvfernandes/eslint-config/node"
 }
 ```
-### Dev Junior + Rocketseat + Igor React (Vite or CRA)
+### My config: Dev Junior + Rocketseat + Igor React (Vite or CRA)
 
 Install dependencies:
 ```
@@ -66,5 +66,17 @@ Inside `.eslintrc.json`
 ```
 {
   "extends": "@pedrohvfernandes/eslint-config/myconfigreact"
+}
+```
+### My config: Node.js
+
+Install dependencies:
+```
+npm i -D eslint @pedrohvfernandes/eslint-config
+```
+Inside `.eslintrc.json`
+```
+{
+  "extends": "@pedrohvfernandes/eslint-config/myconfignode"
 }
 ```
