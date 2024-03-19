@@ -28,14 +28,14 @@ module.exports = {
       {
         'newlinesBetween': 'always',
         'groups': [
-          'module', // Importações de módulos do Node.js
-          'external', // Importações de pacotes externos
-          '@shared', // Importações correspondentes ao padrão @shared
-          'absolute', // Importações correspondentes ao padrão absolute
+          '/module/', // Importações de módulos do Node.js
+          '/external/', // Importações de pacotes externos
+          '/@shared/', // Importações correspondentes ao padrão @shared
+          '/absolute/', // Importações correspondentes ao padrão absolute
           ['parent', 'sibling', 'index'], // Importações locais
-          'object', // Importações de objetos de módulos
-          'type', // Importações de interfaces e types
-          'builtin' // Importações de módulos do Node.js Core
+          '/object/', // Importações de objetos de módulos
+          '/type/', // Importações de interfaces e types
+          '/builtin/' // Importações de módulos do Node.js Core
         ],
         'alphabetize': { 'order': 'asc', 'ignoreCase': true }
       }
