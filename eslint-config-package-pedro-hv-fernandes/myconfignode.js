@@ -20,7 +20,7 @@ module.exports = {
         trailingComma: 'all',
         arrowParens: 'always',
         semi: false,
-        endOfLine: auto
+        endOfLine: 'auto'
       }
     ],
     'import-helpers/order-imports': [
