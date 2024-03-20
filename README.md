@@ -57,3 +57,10 @@
 <a href="https://github.com/igorvieira/vite-setup/blob/master/.eslintrc.json" target="_blank">
   <img height="25" src="https://img.shields.io/badge/Github do projeto-git?style=flat&color=blue">
 </a>
+
+## 👨‍💻 Autor:
+
+- Linkedin: https://www.linkedin.com/in/pedro-henrique-vieira-fernandes
+- Git: https://github.com/PedrohvFernandes
+- Instagram: pedro17fernandes
+- portfolio: https://pedrohvfernandes-web-page-portfolio.vercel.app
