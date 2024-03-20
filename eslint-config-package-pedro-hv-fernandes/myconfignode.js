@@ -28,9 +28,9 @@ module.exports = {
       {
         'newlinesBetween': 'always',
         'groups': [
-          '/module/', // Importações de módulos do Node.js
-          '/external/', // Importações de pacotes externos
-          '/@shared/', // Importações correspondentes ao padrão @shared
+          '/^module/', // Importações de módulos do Node.js
+          '/^external/', // Importações de pacotes externos
+          '/^@shared/', // Importações correspondentes ao padrão @shared
           '/absolute/', // Importações correspondentes ao padrão absolute
           ['parent', 'sibling', 'index'], // Importações locais
           '/object/', // Importações de objetos de módulos
