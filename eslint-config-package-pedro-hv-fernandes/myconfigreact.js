@@ -34,18 +34,18 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/react-in-jsx-scope': 'off',
+    "space-before-function-paren": "off",
     'prettier/prettier': ['error', {
       'printWidth': 80,
       'tabWidth': 2,
       'singleQuote': true,
-      'trailingComma': 'all',
       'arrowParens': 'always',
       'semi': false,
       // 'semi': true,
       'endOfLine': 'auto',
+      // 'trailingComma': 'all',
       'trailingComma': 'none'
     }],
-    'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'jsx-a11y/alt-text': [
       'warn',
