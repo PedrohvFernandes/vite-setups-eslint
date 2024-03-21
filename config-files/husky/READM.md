@@ -148,3 +148,52 @@
     npm uninstall eslint-config-standard-with-typescript eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-standard @typescript-eslint/eslint-plugin @typescript-eslint/parser
   ```
 - Por fim pro arquivo do eslint eu mudou o tipo do arquivo dele para .json e estendo minha config do React
+
+- Ex de comando a mais no pre-commit: meu *.lintstagedrc.json* eu coloquei o comando do jest(Você pode colocar diversos comandos) para rodar os testes antes de fazer o commit de arquivos alterados(Somente deles):
+  ```bash
+    {
+      "*/**/*.{ts,tsx}": [
+          "eslint src/**/*.{ts,tsx} --fix",
+          "npm run test:staged"
+      ]
+    }
+  ```
+- Na pasta *.husky* colocamos o arquivo de hook de pre push que roda o script(Pode ser outro comando ou outros mais) ```npm run test:ci``` antes de fazer o push para o github, que vai gerar a cobertura de testes. Apos colocar isso, não sera possível enviar o push via github desktop, ele da erro de WSL
+  ```bash
+    <3>WSL (30) ERROR: CreateProcessParseCommon:708: Failed to translate C:\Users\Pedro\OneDrive\Documentos\GitHub\tdd-clean-architecture-solid
+    <3>WSL (30) ERROR: CreateProcessParseCommon:754: getpwuid(0) failed 2
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\app-3.3.12\resources\app\git\mingw64\libexec\git-core
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\app-3.3.12\resources\app\git\mingw64\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\app-3.3.12\resources\app\git\usr\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\app-3.3.12\resources\app\git\mingw64\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\app-3.3.12\resources\app\git\mingw64\usr\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Python312\Scripts
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Python312
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\WINDOWS\system32
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\WINDOWS
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\WINDOWS\System32\Wbem
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\WINDOWS\System32\WindowsPowerShell\v1.0
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\WINDOWS\System32\OpenSSH
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\ProgramData\chocolatey\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Roaming\nvm
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\nodejs
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\nodejs
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\Docker\Docker\resources\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\Git\cmd
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\Cloudflare\Cloudflare WARP
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\.console-ninja\.bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\Microsoft\WindowsApps
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\Programs\Microsoft VS Code\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Local\GitHubDesktop\bin
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Roaming\nvm
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Program Files\nodejs
+    <3>WSL (30) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\Pedro\AppData\Roaming\npm
+    <3>WSL (30) ERROR: CreateProcessEntryCommon:331: getpwuid(0) failed 2
+    <3>WSL (30) ERROR: CreateProcessEntryCommon:502: execvpe /bin/bash failed 2
+    <3>WSL (30) ERROR: CreateProcessEntryCommon:505: Create process not expected to return
+    husky - pre-push script failed (code 1)
+    error: failed to push some refs to 'https://github.com/PedrohvFernandes/tdd-clean-architecture-solid.git'
+  ```

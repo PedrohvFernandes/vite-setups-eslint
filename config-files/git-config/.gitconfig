@@ -16,6 +16,7 @@ followTags = true
 [alias]
 # A diferença é que o all pega tudo qualquer arquivo modifocado, não importa se você esteja em outra pasta. já o "." pega somente da onde você abriu o terminal
 # c = !git add .
+# Basicamente so passar git c "chore: sua mensagem"
 c = !git add --all && git commit -m
 # -s status reduzidos, caso queira mais detalhes so digitar git status no termianal
 s = !git status -s
