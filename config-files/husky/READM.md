@@ -197,3 +197,8 @@
     husky - pre-push script failed (code 1)
     error: failed to push some refs to 'https://github.com/PedrohvFernandes/tdd-clean-architecture-solid.git'
   ```
+- O Husky depois da v5 gera conflitos com o pacote git-commit-msg-linter, para resolver basta criar um arquivo dentro do husky *commit-msg* e colocar o seguinte comando:
+  ```bash
+    .git/hooks/commit-msg \$1
+  ```
+Mais detalhes em: [The package is not working with husky v5](https://github.com/legend80s/git-commit-msg-linter/issues/7)
