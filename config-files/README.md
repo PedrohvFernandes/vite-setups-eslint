@@ -8,7 +8,7 @@
   ```bash
     npm i -D @biomejs/biome
   ```
-  2. Crie um arquivo `.biome.json` na raiz do seu projeto e adicione o seguinte conteúdo:
+  2. Crie um arquivo `biome.json` na raiz do seu projeto e adicione o seguinte conteúdo:
   ```json
    "O que esta no arquivo `biome.json` deste repositório. Copie ele todo e cole no seu arquivo biome.json que você criou no seu projeto."
   ```
