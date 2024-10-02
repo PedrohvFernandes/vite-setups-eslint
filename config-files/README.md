@@ -1,6 +1,6 @@
 # Sobre alguns arquivos
 
-### Biome.json para aplicações Node.js
+### Biome.json para aplicações Node.js e React
 
   Biome é uma alternativa do Eslint, para fazer ele funcionar siga os passos abaixo:
 
