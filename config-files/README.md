@@ -29,3 +29,10 @@
   4. Agora instale a extensão do Biome no seu vscode: [Biome](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
 
   5. Reset o seu vscode e pronto, o Biome já esta configurado no seu projeto.
+
+  6. Quando for usar o Biome para o React, lembre de colocar isso: Para front-end react, por conta do main.tsx por conta que estamos usando o noNonNullAssertion(!) que é a forma que ditamos para o ts informando que o root nunca vai ser nulo
+      ```JSON
+      "style": {
+        "noNonNullAssertion": "off"
+        }
+      ```
