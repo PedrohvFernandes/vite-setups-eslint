@@ -22,7 +22,7 @@
     "rules": {
       "recommended": true,
       "style": {
-        "noNonNullAssertion": "off" // Para front-end react, por conta do main.tsx por conta que estamos usando o noNonNullAssertion(!) que é a forma que ditamos para o ts informando que o root nunca vai ser nulo (Remover comentario)
+        "noNonNullAssertion": "off"
       }
     }
   },
