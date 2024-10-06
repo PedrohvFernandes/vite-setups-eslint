@@ -1,0 +1,44 @@
+{
+  "name": "@pedrohvfernandes/eslint-config-vue",
+  "version": "0.0.1",
+  "private": false,
+  "description": "ESLint configuration used by pedrohvfernandes.",
+  "main": "index.js",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-config-vue",
+    "eslint-config-pedrohvfernandes",
+    "pedrohvfernandes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PedrohvFernandes/vite-setups-eslint/tree/main"
+  },
+  "homepage": "https://github.com/PedrohvFernandes/vite-setups-eslint/tree/main/eslint-vue#readme",
+  "peerDependencies": {
+    "eslint": "^8.0.0",
+    "typescript": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@pedrohvfernandes/eslint-config-vue": "file:",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.28.0",
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
+    "prettier": "^3.3.3"
+  }
+}
