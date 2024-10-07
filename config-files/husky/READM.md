@@ -22,6 +22,13 @@
         ]
     }
     ```
+    ```bash
+    {
+        "*/**/*.{ts,tsx}": [
+            "npm run lint:fixmysrc" // Caso tenha alguma comando dentro do package.json de eslint pode usar ele também
+        ]
+    }
+    ```
   - Basicamente o eslint tenta corrigir os arquivos antes de enviar .huskyrc.json
     ```bash
     {
