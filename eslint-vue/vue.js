@@ -63,6 +63,7 @@ module.exports = {
     'vuejs-accessibility/aria-props': 'error',
     'vuejs-accessibility/aria-role': ['error', { ignoreNonDOM: true }],
     'vuejs-accessibility/aria-unsupported-elements': 'error',
+    "vue/multi-word-component-names": "off"
   },
   settings: {
     'import/parsers': {
