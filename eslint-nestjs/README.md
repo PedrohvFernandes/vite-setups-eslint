@@ -37,3 +37,9 @@ Inside `.eslintrc.json`
   "extends": "@pedrohvfernandes/eslint-config-nestjs/nestjs"
 }
 ```
+
+### Uninstall
+
+```
+npm uninstall eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-prettier prettier
+```
