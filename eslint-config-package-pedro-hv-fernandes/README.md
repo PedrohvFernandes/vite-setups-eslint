@@ -12,6 +12,7 @@
   - Does not have commas at the end;
 -  *In this case, it is not necessary to create the .prettier file in the project root, as the eslintrc configured in this package already contains the exact settings for prettier.*
 -  *Note: Remove the prettier extension and install the eslint extension*
+- TypeScript;
 
 ## Commands suggestions(script in package.json)
 

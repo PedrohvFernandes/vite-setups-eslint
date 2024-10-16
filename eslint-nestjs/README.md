@@ -2,40 +2,38 @@
 
 ## Whats included?
 
-- Eslint;
-- eslint-plugin-vuejs-a11y;
-- Prettier;
+- Eslint
+- Prettier
   - Does not have commas at the end;
 -  *In this case, it is not necessary to create the .prettier file in the project root, as the eslintrc configured in this package already contains the exact settings for prettier.*
 -  *Note: Remove the prettier extension and install the eslint extension*
-- vue/vue3-strongly-recommended;
-- Vue plugin;
-- Typescript;
+- Typescript
 
 ## Commands suggestions(script in package.json)
 
 ```json
 {
   "scripts": {
-    "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
     "lint:mysrc": "eslint ./src --max-warnings 0",
     "lint:fix": "eslint . --fix",
-    "lint:fixmysrc": "eslint src/**/*.{ts,vue} --fix"
+    "lint:fixmysrc": "eslint src/**/*.{ts} --fix",
+    "lint:general": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
   }
 }
 ```
 
 ## Setup
 
-### Vue (Vite or CRA)
+### NestJs Node
 
 Install dependencies: 
 ```
-npm i -D eslint @pedrohvfernandes/eslint-config-vue
+npm i -D eslint @pedrohvfernandes/eslint-config-nestjs
 ```
 Inside `.eslintrc.json`
 ```
 {
-  "extends": "@pedrohvfernandes/eslint-config-vue/vue"
+  "extends": "@pedrohvfernandes/eslint-config-nestjs/nestjs"
 }
 ```
