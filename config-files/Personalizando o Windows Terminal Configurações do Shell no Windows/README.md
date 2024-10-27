@@ -14,3 +14,5 @@ Obs: Baixe o Powershell 7, como ela recomenda
 Se prefir tem um pdf com o tutorial dela: Personalizando o Windows Terminal.pdf 
 
 De um ctrl + para aumentar o tamanho do terminal
+
+Configs do Diego da Rocketseat: [A minha configuração de terminal.](https://www.youtube.com/shorts/gmuBo9744cM)
