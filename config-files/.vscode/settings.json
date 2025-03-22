@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    // "source.fixAll": true,
+    // "source.fixAll.eslint": true,
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+  },
+  "eslint.format.enable": true
+ }

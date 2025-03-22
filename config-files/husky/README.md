@@ -154,7 +154,7 @@
   ```bash
     npm uninstall eslint-config-standard-with-typescript eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-standard @typescript-eslint/eslint-plugin @typescript-eslint/parser
   ```
-- Por fim pro arquivo do eslint eu mudou o tipo do arquivo dele para .json e estendo minha config do React
+- Por fim pro arquivo do eslint eu mudo o tipo do arquivo dele para .json e estendo minha config do React
 
 - Ex de comando a mais no pre-commit: meu *.lintstagedrc.json* eu coloquei o comando do jest(Você pode colocar diversos comandos) para rodar os testes antes de fazer o commit de arquivos alterados(Somente deles):
   ```bash
