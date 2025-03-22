@@ -21,6 +21,9 @@
   <a href="https://github.com/Rocketseat/eslint-config-rocketseat/tree/main" target="_blank">
     <img height="25" src="https://img.shields.io/badge/Meu pacote de Eslint-package?style=flat&color=blue">
   </a>
+  <a href="https://blog.rocketseat.com.br/como-configurar-um-projeto-next-js-com-tailwind-css-eslint-e-prettier/" target="_blank">
+    <img height="25" src="https://img.shields.io/badge/Blog rocketseat do pacote do Eslint da rocketseat-package?style=flat&color=blue">
+  </a>
 
 ## 2 - Dev Junior Alves: - He used next.js
 
