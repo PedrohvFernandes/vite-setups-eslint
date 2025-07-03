@@ -13,6 +13,34 @@
 -  *In this case, it is not necessary to create the .prettier file in the project root, as the eslintrc configured in this package already contains the exact settings for prettier.*
 -  *Note: Remove the prettier extension and install the eslint extension*
 - TypeScript;
+## VSCode Configuration for Auto Formatting on Save
+
+In some cases, it's necessary to enable the **Format on Save** option in your VSCode.
+
+To do this:
+
+1. Click on the **gear icon (⚙️)** in the bottom-left corner of VSCode.
+2. Select **Settings**.
+3. In the search bar, type: `Format on Save`.
+4. Enable the **Format on Save** checkbox.
+
+---
+
+## Project Configuration
+
+In the root directory of your project, create a folder named `.vscode`, and inside it, create a file named `settings.json` with the following configuration:
+
+```json
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.format.enable": true
+}
+```
 
 ## Commands suggestions(script in package.json)
 
